@@ -22,7 +22,7 @@ function Create() {
 
     const Product = {id:nanoid(),  title, image, category, price, description}
     setProducts([...products, Product])
-    localStorage.setItem("products" , JSON.stringify([...products, Product]))
+    //localStorage.setItem("products" , JSON.stringify([...products, Product]))
     toast.success("Product Added Successfully")
     navigate('/')
   }

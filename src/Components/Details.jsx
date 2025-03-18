@@ -12,17 +12,17 @@ function Details() {
   const [product, setproduct] = useState(null);
   const[products,setProducts] = useContext(ProductContext)
 
-  // const getsingleproduct = async() => {
-  //   try {
-  //     const  {data} = await axios.get(`/products/${id}`)
-  //     setproduct(data);
-  //   } catch (error) {
-  //     console.log(error)
-  //   }
-  // }
+  const getsingleproduct = async() => {
+    try {
+      const  {data} = await axios.get(`/products/${id}`)
+      setproduct(data);
+    } catch (error) {
+      console.log(error)
+    }
+  }
 
   useEffect(() => {
-    // getsingleproduct()
+     getsingleproduct()
     if(!product) {
       setproduct(products.filter((p) => p.id == id)[0])
     }
@@ -31,7 +31,7 @@ function Details() {
   const deleteproducthandler = (id) => {
     const deleteproduct = products.filter((p) => p.id != id)
     setProducts(deleteproduct)
-    localStorage.setItem("products", JSON.stringify(deleteproduct))
+    //localStorage.setItem("products", JSON.stringify(deleteproduct))
     toast.success('Product Deleted Successfully')
     navigate('/')
   }

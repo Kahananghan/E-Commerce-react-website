@@ -9,24 +9,23 @@ function Home() {
   const [Products] = useContext(ProductContext)
   const {search} = useLocation();
   const category = decodeURIComponent(search.split("=")[1]) 
-  
   const [filterproducts, setfilterproducts] = useState(null);
   
-  // const getproductscategory = async() => {
-  //   try {
-  //     const {data} = await axios.get(`/products/category/${category}`)
-  //     setfilterproducts(data)
-  //   } catch (error) {
-  //      console.log(error);
-  //   }
-  // }
+  const getproductscategory = async() => {
+    try {
+      const {data} = await axios.get(`/products/category/${category}`)
+      setfilterproducts(data)
+    } catch (error) {
+       console.log(error);
+    }
+  }
 
   useEffect(() => {
     if(!filterproducts || category == "undefined") setfilterproducts(Products)
 
     if(category != "undefined"){
 
-      //getproductscategory();
+      getproductscategory();
       setfilterproducts(Products.filter((p) => p.category == category))
       
     }
@@ -38,7 +37,6 @@ function Home() {
     <Nav/>
 
     <div className='h-screen w-[85%] p-10 pt-[5%] flex flex-wrap overflow-x-hidden overflow-y-auto '>
-
 
       {filterproducts && filterproducts.map((product,index) => (
         <Link key={product.id} to={`/details/${product.id}`} className='w-[18%] h-[30vh]  inset-shadow-sm shadow-xl p-3 rounded flex flex-col justify-center items-center mr-3 mb-3'>
