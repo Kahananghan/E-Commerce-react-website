@@ -48,7 +48,7 @@ function Details() {
           <h2 className='text-red-300 mb-3'>{"$ "}{product.price}</h2>
           <p className='mb-[8%]'>{product.description}</p>
 
-          <Link to={`/edit/${product.id}`} className='py-3 px-5 border rounded border-blue-200 text-blue-300 mr-3'>Edit</Link>
+          <Link to={`/edit/${product.id}`} className='py-3 px-5 border rounded border-blue-400 text-blue-400 mr-3'>Edit</Link>
 
           <button onClick={() => deleteproducthandler(product.id)} className='py-3 px-5 border rounded border-red-200 text-red-300'>Delete</button>
         </div>

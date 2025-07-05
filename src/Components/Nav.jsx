@@ -17,13 +17,13 @@ function Nav() {
     <div className="flex w-[15%] h-screen">
 
       <nav className='w-full bg-zinc-100 h-screen flex flex-col items-center pt-5'>
-        <a className='py-3 px-5 border rounded border-blue-200 text-blue-300' href="/create">Add New Product</a>
-        <hr className='w-[80%] my-3' />
+        <a className='hover:bg-blue-100 py-3 px-5 border rounded border-blue-400 text-blue-400' href="/create">Add New Product</a>
+        <hr className='w-[80%] my-4' />
         <h1 className='text-2xl mb-3 w-[80%]'>Category</h1>
 
         {distinct_category.map((cat,index) => (
-          <div key={index} className='w-[80%]'>
-            <Link to={`/?category/=${cat}`} className='flex items-center mb-3'> 
+          <div key={index} className='w-[80%] hover:bg-zinc-200 rounded-md px-2 py-2 mb-2'>
+            <Link to={`/?category/=${cat}`} className='flex items-center'> 
             <span style={{background: color()}} className='rounded-full mr-2 w-[15px] h-[15px] '></span>{" "} 
             {cat}</Link>
           </div>

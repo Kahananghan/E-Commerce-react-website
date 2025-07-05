@@ -40,7 +40,7 @@ function Home() {
 
       {filterproducts && filterproducts.map((product,index) => (
         <Link key={product.id} to={`/details/${product.id}`} className='w-[18%] h-[30vh]  inset-shadow-sm shadow-xl p-3 rounded flex flex-col justify-center items-center mr-3 mb-3'>
-          <div className='hover:scale-110 w-full h-[80%] bg-contain bg-no-repeat bg-center mb-3 ' style={{backgroundImage:`url(${product.image})`,}}>
+          <div className='hover:scale-110 w-full h-[80%] bg-contain bg-no-repeat bg-center mb-3 ' style={{backgroundImage:`url(${product.image})`}}>
           </div>
           <h1 className='hover:text-blue-300'>{product.title}</h1>
         </Link>

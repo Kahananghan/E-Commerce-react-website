@@ -97,7 +97,7 @@ function Edit() {
         value={product && product.description}
         />
 
-        <div className='w-1/2'><button className='py-3 px-5 border rounded border-blue-200 text-blue-300'>Edit Product</button></div>
+        <div className='w-1/2'><button className='py-3 px-5 border rounded border-blue-400 text-blue-400'>Edit Product</button></div>
       </form>
 
     </div>
